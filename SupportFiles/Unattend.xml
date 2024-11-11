@@ -74,7 +74,7 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>12</Order>
-					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\tzautoupdate" /v Start /t REG_DWORD /d 3 /f</Path>
+					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\tzautoupdate" /v Start /t REG_DWORD /d 2 /f</Path>
 					<Description>Enable Time Zone Auto Update</Description>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
@@ -84,8 +84,8 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>14</Order>
-					<Path>tzutil.exe /s "Eastern Standard Time"</Path>
-					<Description>Set Time Zone to Eastern Time</Description>
+					<Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\lfsvc\Service\Configuration" /v Status /t REG_DWORD /d 1 /f</Path>
+					<Description>Enable System Location Services</Description>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>15</Order>
