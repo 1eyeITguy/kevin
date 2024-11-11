@@ -69,16 +69,21 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>11</Order>
+					<Path>tzutil.exe /s "Eastern Standard Time"</Path>
+					<Description>Set Time Zone to Eastern Time</Description>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>12</Order>
 					<Path>reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableFirstLogonAnimation /t REG_DWORD /d 0 /f</Path>
 					<Description>Disable First Logon Animation</Description>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>12</Order>
+					<Order>13</Order>
 					<Path>reg add "HKLM\SYSTEM\CurrentControlSet\Control\Network" /v NewNetworkWindowOff /t REG_DWORD /d 1 /f</Path>
 					<Description>Disable New Network Dialog</Description>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
-					<Order>13</Order>
+					<Order>14</Order>
 					<Path>reg add "HKLM\Software\Microsoft\Edge" /v HideFirstRunExperience /t REG_DWORD /d 1 /f</Path>
 					<Description>Disable Edge First Run</Description>
 				</RunSynchronousCommand>
