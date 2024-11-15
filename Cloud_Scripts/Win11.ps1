@@ -36,14 +36,6 @@ if ($DriverPack){
     $Global:MyOSDCloud.DriverPackName = $DriverPack.Name
 }
 
-<#
-if ($Manufacturer -match "Lenovo") {
-    #Set Lenovo BIOS Settings to what I want:
-    Invoke-Expression (Invoke-RestMethod https://raw.githubusercontent.com/gwblok/garytown/master/OSD/CloudOSD/Manage-LenovoBiosSettings.ps1)
-    Manage-LenovoBIOSSettings -SetSettings
-}
-#>
-
 #write variables to console
 Write-Output $Global:MyOSDCloud
 
@@ -54,11 +46,3 @@ write-host -ForegroundColor DarkGray "Start-OSDCloud -OSName $OSName -OSEdition 
 Start-OSDCloud -OSName $OSName -OSEdition $OSEdition -OSActivation $OSActivation -OSLanguage $OSLanguage        
 
 write-host -ForegroundColor Green "[+] OSDCloud Process Complete"
-
-<#
-if ($Manufacturer -match "Lenovo") {
-    $PowerShellSavePath = 'C:\Program Files\WindowsPowerShell'
-    Write-Host "Copy-PSModuleToFolder -Name LSUClient to $PowerShellSavePath\Modules"
-    Copy-PSModuleToFolder -Name LSUClient -Destination "$PowerShellSavePath\Modules"
-}
-#>
