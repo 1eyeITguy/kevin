@@ -34,6 +34,12 @@ Replace the parameter values as needed:
 
 - vmName: The name of the virtual machine (this also sets the computer name).
 
+## 4. Get public IP after deployment
+
+```bash
+az network public-ip show --resource-group YourResourceGroup --name pip-YourVMName --query ipAddress --output tsv
+```
+
 ## Summary
 The above steps will log you into Azure, ensure that your resource group exists, and then deploy all the resources defined in your Bicep template.
 
